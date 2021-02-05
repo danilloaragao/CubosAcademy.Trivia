@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_academy/components/app_bar_trivia.dart';
+import 'package:trivia_academy/components/commom_button.dart';
 
 // ignore: must_be_immutable
 class ScoreScreen extends StatelessWidget {
@@ -11,14 +13,7 @@ class ScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Color(0xff374952),
-        title: Image(
-          image: AssetImage('lib/assets/icone.png'),
-        ),
-        centerTitle: true,
-      ),
+      appBar: AppBarTrivia(),
       body: Column(
         children: [
           Expanded(
@@ -73,21 +68,13 @@ class ScoreScreen extends StatelessWidget {
               ),
             ]),
             child: Center(
-              child: FlatButton(
-                padding: EdgeInsets.fromLTRB(60, 11, 60, 11),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                textColor: Color(0xffF7F7F7),
-                color: Color(0xffDA0175),
-                onPressed: () {
-                  Navigator.popUntil(context, (route) => route.isFirst);
-                },
-                child: Text(
-                  'Jogar Novamente',
-                  style: TextStyle(fontSize: 14),
-                ),
-              ),
-            ),
+                child: CommomButton(
+              caption: 'Jogar Novamente',
+              onPressed: () {
+                Navigator.popUntil(context, (route) => route.isFirst);
+              },
+              enabled: true,
+            )),
           ),
         ],
       ),

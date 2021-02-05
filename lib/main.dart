@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'initial_screen.dart';
+import 'package:trivia_academy/screens/initial_screen.dart';
 
 void main() {
   runApp(Trivia());

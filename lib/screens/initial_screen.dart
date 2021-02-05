@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_academy/trivia_screen.dart';
+import 'package:trivia_academy/components/commom_button.dart';
+import 'package:trivia_academy/screens/trivia_screen.dart';
 
 class InitialScreen extends StatelessWidget {
   @override
@@ -28,22 +29,15 @@ class InitialScreen extends StatelessWidget {
           SizedBox(
             height: 88,
           ),
-          FlatButton(
+          CommomButton(
+            caption: 'Começar',
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => TriviaScreen()),
               );
             },
-            color: Color.fromRGBO(218, 1, 117, 1),
-            textColor: Color.fromRGBO(247, 247, 247, 1),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            padding: EdgeInsets.fromLTRB(60, 11, 60, 11),
-            child: Text(
-              'Começar',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-            ),
+            enabled: true,
           )
         ],
       ),
